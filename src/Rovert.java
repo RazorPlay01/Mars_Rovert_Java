@@ -90,9 +90,9 @@ public class Rovert {
         System.out.println("El robert se encuentra en: X|" + getX() + ',' + " Y|" + getY() + ',' + " Eyes|" + getEyes());
         robertMap.get(getY()).set(getX(), "@");
         System.out.println("+------------------------------------------+");
-        for (int i = 0; i < robertMap.size(); i++) {
-            for (int j = 0; j < robertMap.get(i).size(); j++) {
-                System.out.printf("%2s ", robertMap.get(i).get(j));
+        for (List<String> strings : robertMap) {
+            for (String string : strings) {
+                System.out.printf("%2s ", string);
             }
             System.out.println();
         }
