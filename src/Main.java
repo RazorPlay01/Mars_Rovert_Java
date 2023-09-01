@@ -6,13 +6,14 @@ public class Main {
     }
 
     private static void controlRovert() {
+        //Rovert rovert = new Rovert(0,2,"W");
         Rovert rovert = new Rovert();
         Scanner scanner = new Scanner(System.in);
         int option;
 
         do {
             System.out.println("Sistema de pilotaje del Robert:");
-            rovert.showPosition();
+            rovert.showMap();
             System.out.println("1: Avanzar " +
                     "2: Retroceder " +
                     "3: Rotar " +
@@ -27,7 +28,7 @@ public class Main {
                     Scanner rInput = new Scanner(System.in);
                     String input = rInput.nextLine();
                     rovert.setEyes(input);
-                    rovert.showPosition();
+                    rovert.showMap();
                 }
                 default -> {
                 }
