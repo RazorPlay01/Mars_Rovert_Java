@@ -1,6 +1,6 @@
 public class Rock {
-    private int X;
-    private int Y;
+    private final int X;
+    private final int Y;
 
     public Rock(int x, int y) {
         X = x;
