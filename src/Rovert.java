@@ -30,7 +30,7 @@ public class Rovert {
         Random random = new Random();
         int randomX = random.nextInt(10);
         int randomY = random.nextInt(10);
-        if (!isClogged(randomX, randomY, rocks)) {
+        if (isNotClogged(randomX, randomY, rocks)) {
             setX(randomX);
             setY(randomY);
         }
@@ -102,41 +102,41 @@ public class Rovert {
         robertMap.get(getY()).set(getX(), "0");
         if (eyes.equalsIgnoreCase("N")) {
             if (getY() == 0) {
-                if (!isClogged(X, Y + 9, rocks)) {
+                if (isNotClogged(X, Y + 9, rocks)) {
                     setY(9);
                 }
             } else {
-                if (!isClogged(X, Y - 1, rocks)) {
+                if (isNotClogged(X, Y - 1, rocks)) {
                     setY(Y - 1);
                 }
             }
         } else if (eyes.equalsIgnoreCase("S")) {
             if (getY() == 9) {
-                if (!isClogged(X, Y - 9, rocks)) {
+                if (isNotClogged(X, Y - 9, rocks)) {
                     setY(0);
                 }
             } else {
-                if (!isClogged(X, Y + 1, rocks)) {
+                if (isNotClogged(X, Y + 1, rocks)) {
                     setY(Y + 1);
                 }
             }
         } else if (eyes.equalsIgnoreCase("E")) {
             if (getX() == 9) {
-                if (!isClogged(X - 9, Y, rocks)) {
+                if (isNotClogged(X - 9, Y, rocks)) {
                     setX(0);
                 }
             } else {
-                if (!isClogged(X + 1, Y, rocks)) {
+                if (isNotClogged(X + 1, Y, rocks)) {
                     setX(X + 1);
                 }
             }
         } else {
             if (getX() == 0) {
-                if (!isClogged(X + 9, Y, rocks)) {
+                if (isNotClogged(X + 9, Y, rocks)) {
                     setX(9);
                 }
             } else {
-                if (!isClogged(X - 1, Y, rocks)) {
+                if (isNotClogged(X - 1, Y, rocks)) {
                     setX(X - 1);
                 }
             }
@@ -148,41 +148,41 @@ public class Rovert {
         robertMap.get(getY()).set(getX(), "0");
         if (eyes.equalsIgnoreCase("N")) {
             if (getY() == 9) {
-                if (!isClogged(X, Y - 9, rocks)) {
+                if (isNotClogged(X, Y - 9, rocks)) {
                     setY(0);
                 }
             } else {
-                if (!isClogged(X, Y + 1, rocks)) {
+                if (isNotClogged(X, Y + 1, rocks)) {
                     setY(Y + 1);
                 }
             }
         } else if (eyes.equalsIgnoreCase("S")) {
             if (getY() == 0) {
-                if (!isClogged(X, Y + 9, rocks)) {
+                if (isNotClogged(X, Y + 9, rocks)) {
                     setY(9);
                 }
             } else {
-                if (!isClogged(X, Y - 1, rocks)) {
+                if (isNotClogged(X, Y - 1, rocks)) {
                     setY(Y - 1);
                 }
             }
         } else if (eyes.equalsIgnoreCase("E")) {
             if (getX() == 0) {
-                if (!isClogged(X + 9, Y, rocks)) {
+                if (isNotClogged(X + 9, Y, rocks)) {
                     setX(9);
                 }
             } else {
-                if (!isClogged(X - 1, Y, rocks)) {
+                if (isNotClogged(X - 1, Y, rocks)) {
                     setX(X - 1);
                 }
             }
         } else {
             if (getX() == 9) {
-                if (!isClogged(X - 9, Y, rocks)) {
+                if (isNotClogged(X - 9, Y, rocks)) {
                     setX(0);
                 }
             } else {
-                if (!isClogged(X + 1, Y, rocks)) {
+                if (isNotClogged(X + 1, Y, rocks)) {
                     setX(X + 1);
                 }
             }
@@ -190,14 +190,14 @@ public class Rovert {
         robertMap.get(getY()).set(getX(), "@");
     }
 
-    public boolean isClogged(int x, int y, List<Rock> rocks) {
+    public boolean isNotClogged(int x, int y, List<Rock> rocks) {
         for (Rock rock : rocks) {
             if (rock.getY() == y && rock.getX() == x) {
                 System.out.println("El camino se encuentra obstruido por una roca!");
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     public void generateRandomRocks(int cantidad) {
