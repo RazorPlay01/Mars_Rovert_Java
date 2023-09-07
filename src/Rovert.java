@@ -2,8 +2,6 @@ import java.util.*;
 
 public class Rovert {
     private final List<Rock> rocks = new ArrayList<>();
-    private final Map<Character, Integer> yCords = new HashMap<>();
-    private Map<Integer, Character> yCords_ = new HashMap<>();
     private final Map<Integer, String> eyesMap = new HashMap<>();
     private Integer X = 0;
     private Integer Y = 0;
@@ -20,27 +18,12 @@ public class Rovert {
             robertMap.add(fila);
         }
 
-        yCords.put('A', 0);
-        yCords.put('B', 1);
-        yCords.put('C', 2);
-        yCords.put('D', 3);
-        yCords.put('E', 4);
-        yCords.put('F', 5);
-        yCords.put('G', 6);
-        yCords.put('H', 7);
-        yCords.put('I', 8);
-        yCords.put('J', 9);
-
         eyesMap.put(0, "N");
         eyesMap.put(1, "S");
         eyesMap.put(2, "E");
         eyesMap.put(3, "W");
 
         setRandomSpawn(true);
-
-        for (Map.Entry<Character, Integer> entry : yCords.entrySet()) {
-            yCords_.put(entry.getValue(), entry.getKey());
-        }
     }
 
     public void setRandomSpawn(boolean setElles) {
@@ -70,17 +53,6 @@ public class Rovert {
         X = x;
         Y = y;
         this.eyes = eyes;
-
-        yCords.put('A', 0);
-        yCords.put('B', 1);
-        yCords.put('C', 2);
-        yCords.put('D', 3);
-        yCords.put('E', 4);
-        yCords.put('F', 5);
-        yCords.put('G', 6);
-        yCords.put('H', 7);
-        yCords.put('I', 8);
-        yCords.put('J', 9);
 
         eyesMap.put(0, "N");
         eyesMap.put(1, "S");

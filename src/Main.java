@@ -33,7 +33,7 @@ public class Main {
                 }
                 case 4 -> {
                     Scanner rInput = new Scanner(System.in);
-                    System.out.println("Especifique los comandos a seguir.(1,1,S,1,2,E)");
+                    System.out.println("Especifique los comandos a seguir. [1,1,S,1,2,E]");
                     String commands = rInput.nextLine();
                     String[] commandSplit = commands.split(",");
                     for (String command : commandSplit) {
